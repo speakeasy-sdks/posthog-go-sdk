@@ -1,20 +1,18 @@
-name: Generate
+name: Publish
 
 on:
-  workflow_dispatch: {} # Allows manual triggering of the workflow to generate SDK
-  schedule:
-    - cron: 0 0 * * * # Runs every day at midnight
+  push: # Will trigger when the RELEASES.md file is updated by the merged PR from the generation workflow
+    paths:
+      - "RELEASES.md"
+    branches:
+      - main
 
 jobs:
-  generate:
-    uses: speakeasy-api/sdk-generation-action/.github/workflows/sdk-generation.yaml@v7
+  publish:
+    uses: speakeasy-api/sdk-generation-action/.github/workflows/sdk-publish.yaml@v7 # Import the sdk publish workflow which will handle the publishing to the package managers
     with:
-      speakeasy_version: latest
-      openapi_doc_location: ./schema.yaml
-      languages: |-
-        - go: ./
-       
-      mode: pr
+      publish_go: true
+      create_release: true
     secrets:
       github_access_token: ${{ secrets.GITHUB_TOKEN }}
       speakeasy_api_key: ${{ secrets.SPEAKEASY_API_KEY }}

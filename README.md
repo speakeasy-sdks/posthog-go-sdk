@@ -1,4 +1,11 @@
-# github.com/speakeasy-sdks/posthog-go-sdk
+# PostHog Go SDK
+
+<div align="center">
+   <p>The PostHog API allows you to perform any action as if you were an authenticated user utilizing the PostHog UI. It is mostly used for getting data out of PostHog, as well as other private actions such as creating a feature flag.</p>
+   <a href="https://github.com/speakeasy-sdks/posthog-go-sdk/actions"><img src="https://img.shields.io/github/actions/workflow/status/speakeasy-sdks/leapml-python-sdk/speakeasy_sdk_generation.yml?style=for-the-badge" /></a>
+   <a href="https://posthog.com/docs/api"><img src="https://img.shields.io/static/v1?label=Docs&message=API Ref&color=000&style=for-the-badge" /></a>
+   <a href="https://discord.com/channels/1065392526745403502/1065392527198404670"><img src="https://img.shields.io/static/v1?label=Slack&message=Join&color=7289da&style=for-the-badge" /></a>
+</div>
 
 <!-- Start SDK Installation -->
 ## SDK Installation

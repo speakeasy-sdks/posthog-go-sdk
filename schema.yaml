@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: PostHog API
-  version: null
+  version: 0.0.0
   description: ''
 servers:
   - url: https://app.posthog.com/api/

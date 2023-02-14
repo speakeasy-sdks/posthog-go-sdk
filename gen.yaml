@@ -1,0 +1,3 @@
+go:
+    packagename: github.com/speakeasy-sdks/posthog-go-sdk
+sdkclassname: posthog

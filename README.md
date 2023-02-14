@@ -4,7 +4,7 @@
    <p>The PostHog API allows you to perform any action as if you were an authenticated user utilizing the PostHog UI. It is mostly used for getting data out of PostHog, as well as other private actions such as creating a feature flag.</p>
    <a href="https://github.com/speakeasy-sdks/posthog-go-sdk/actions"><img src="https://img.shields.io/github/actions/workflow/status/speakeasy-sdks/leapml-python-sdk/speakeasy_sdk_generation.yml?style=for-the-badge" /></a>
    <a href="https://posthog.com/docs/api"><img src="https://img.shields.io/static/v1?label=Docs&message=API Ref&color=000&style=for-the-badge" /></a>
-   <a href="https://discord.com/channels/1065392526745403502/1065392527198404670"><img src="https://img.shields.io/static/v1?label=Slack&message=Join&color=7289da&style=for-the-badge" /></a>
+   <a href="[https://discord.com/channels/1065392526745403502/1065392527198404670](https://posthog.com/slack)"><img src="https://img.shields.io/static/v1?label=Slack&message=Join&color=7289da&style=for-the-badge" /></a>
 </div>
 
 <!-- Start SDK Installation -->
@@ -14,6 +14,20 @@
 go get github.com/speakeasy-sdks/posthog-go-sdk
 ```
 <!-- End SDK Installation -->
+
+## Authentication
+
+Personal API keys allow full access to your account, just like e-mail address and password, but you can create any number of them and each one can invalidated individually at any moment. This makes for greater control for you and improved security of stored data.
+
+1. How to obtain a personal API key
+2. Click on your name/avatar on the top right.
+3. Click the gear next to your name to access 'Account settings'.
+4. Navigate to the 'Personal API Keys' section.
+5. Click "+ Create a Personal API Key".
+6. Give your new key a label – it's just for you, usually to describe the key's purpose.
+7. Click 'Create Key'.
+
+There you go! At the top of the list you should now be seeing your brand new key. Immediately copy its value, as you'll never see it again after refreshing the page. But don't worry if you forget to copy it – you can delete and create keys as much as you want.
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->

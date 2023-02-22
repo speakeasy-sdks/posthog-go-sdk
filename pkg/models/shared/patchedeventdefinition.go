@@ -12,6 +12,6 @@ type PatchedEventDefinitionInput struct {
 	Name            *string       `json:"name,omitempty" form:"name=name" multipartForm:"name=name"`
 	PostToSlack     *bool         `json:"post_to_slack,omitempty" form:"name=post_to_slack" multipartForm:"name=post_to_slack"`
 	QueryUsage30Day *int64        `json:"query_usage_30_day,omitempty" form:"name=query_usage_30_day" multipartForm:"name=query_usage_30_day"`
-	Tags            []interface{} `json:"tags,omitempty" form:"name=tags,json" multipartForm:"name=tags,json"`
+	Tags            []interface{} `json:"tags,omitempty" form:"name=tags" multipartForm:"name=tags"`
 	Volume30Day     *int64        `json:"volume_30_day,omitempty" form:"name=volume_30_day" multipartForm:"name=volume_30_day"`
 }

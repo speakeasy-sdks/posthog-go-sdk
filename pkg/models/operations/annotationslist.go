@@ -22,5 +22,5 @@ type AnnotationsListRequest struct {
 type AnnotationsListResponse struct {
 	ContentType             string
 	PaginatedAnnotationList *shared.PaginatedAnnotationList
-	StatusCode              int64
+	StatusCode              int
 }

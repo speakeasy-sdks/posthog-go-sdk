@@ -23,5 +23,5 @@ type PropertyDefinitionsPartialUpdateRequest struct {
 type PropertyDefinitionsPartialUpdateResponse struct {
 	ContentType        string
 	PropertyDefinition *shared.PropertyDefinition
-	StatusCode         int64
+	StatusCode         int
 }

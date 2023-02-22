@@ -17,5 +17,5 @@ type FeatureFlagsRoleAccessRetrieveRequest struct {
 type FeatureFlagsRoleAccessRetrieveResponse struct {
 	ContentType           string
 	FeatureFlagRoleAccess *shared.FeatureFlagRoleAccessOutput
-	StatusCode            int64
+	StatusCode            int
 }

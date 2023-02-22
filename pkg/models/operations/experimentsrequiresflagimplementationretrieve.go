@@ -15,5 +15,5 @@ type ExperimentsRequiresFlagImplementationRetrieveRequest struct {
 type ExperimentsRequiresFlagImplementationRetrieveResponse struct {
 	ContentType string
 	Experiment  *shared.Experiment
-	StatusCode  int64
+	StatusCode  int
 }

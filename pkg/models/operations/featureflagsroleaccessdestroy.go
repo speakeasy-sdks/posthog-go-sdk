@@ -12,5 +12,5 @@ type FeatureFlagsRoleAccessDestroyRequest struct {
 
 type FeatureFlagsRoleAccessDestroyResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

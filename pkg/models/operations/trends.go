@@ -28,6 +28,6 @@ type TrendsRequest struct {
 type TrendsResponse struct {
 	Body         []byte
 	ContentType  string
-	StatusCode   int64
+	StatusCode   int
 	TrendResults *shared.TrendResults
 }

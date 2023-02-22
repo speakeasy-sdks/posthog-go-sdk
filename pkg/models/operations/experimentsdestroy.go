@@ -11,5 +11,5 @@ type ExperimentsDestroyRequest struct {
 
 type ExperimentsDestroyResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

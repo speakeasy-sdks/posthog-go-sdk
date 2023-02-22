@@ -61,7 +61,7 @@ func (s *dashboardTemplates) DashboardTemplatesCreate(ctx context.Context, reque
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DashboardTemplatesCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 
@@ -91,7 +91,7 @@ func (s *dashboardTemplates) DashboardTemplatesRepositoryRetrieve(ctx context.Co
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DashboardTemplatesRepositoryRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 

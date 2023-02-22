@@ -16,5 +16,5 @@ type ExperimentsSecondaryResultsRetrieveRequest struct {
 type ExperimentsSecondaryResultsRetrieveResponse struct {
 	ContentType string
 	Experiment  *shared.Experiment
-	StatusCode  int64
+	StatusCode  int
 }

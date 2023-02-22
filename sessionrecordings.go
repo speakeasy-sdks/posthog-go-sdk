@@ -51,7 +51,7 @@ func (s *sessionRecordings) SessionRecordingsPropertiesRetrieve(ctx context.Cont
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.SessionRecordingsPropertiesRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -84,7 +84,7 @@ func (s *sessionRecordings) SessionRecordingsRetrieve(ctx context.Context, reque
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.SessionRecordingsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -117,7 +117,7 @@ func (s *sessionRecordings) SessionRecordingsRetrieve2(ctx context.Context, requ
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.SessionRecordingsRetrieve2Response{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -150,7 +150,7 @@ func (s *sessionRecordings) SessionRecordingsSnapshotsRetrieve(ctx context.Conte
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.SessionRecordingsSnapshotsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

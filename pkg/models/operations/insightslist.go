@@ -32,5 +32,5 @@ type InsightsListResponse struct {
 	Body                 []byte
 	ContentType          string
 	PaginatedInsightList *shared.PaginatedInsightList
-	StatusCode           int64
+	StatusCode           int
 }

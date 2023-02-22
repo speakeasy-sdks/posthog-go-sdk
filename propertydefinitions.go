@@ -38,7 +38,9 @@ func (s *propertyDefinitions) PropertyDefinitionsList(ctx context.Context, reque
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -54,7 +56,7 @@ func (s *propertyDefinitions) PropertyDefinitionsList(ctx context.Context, reque
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PropertyDefinitionsListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -103,7 +105,7 @@ func (s *propertyDefinitions) PropertyDefinitionsPartialUpdate(ctx context.Conte
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PropertyDefinitionsPartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -145,7 +147,7 @@ func (s *propertyDefinitions) PropertyDefinitionsRetrieve(ctx context.Context, r
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PropertyDefinitionsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -197,7 +199,7 @@ func (s *propertyDefinitions) PropertyDefinitionsUpdate(ctx context.Context, req
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PropertyDefinitionsUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

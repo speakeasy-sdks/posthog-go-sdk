@@ -46,7 +46,9 @@ func (s *funnel) Funnels(ctx context.Context, request operations.FunnelsRequest)
 
 	req.Header.Set("Content-Type", reqContentType)
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -62,7 +64,7 @@ func (s *funnel) Funnels(ctx context.Context, request operations.FunnelsRequest)
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.FunnelsResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

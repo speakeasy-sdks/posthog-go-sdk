@@ -38,7 +38,9 @@ func (s *eventDefinitions) EventDefinitionsList(ctx context.Context, request ope
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -54,7 +56,7 @@ func (s *eventDefinitions) EventDefinitionsList(ctx context.Context, request ope
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.EventDefinitionsListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -103,7 +105,7 @@ func (s *eventDefinitions) EventDefinitionsPartialUpdate(ctx context.Context, re
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.EventDefinitionsPartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -145,7 +147,7 @@ func (s *eventDefinitions) EventDefinitionsRetrieve(ctx context.Context, request
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.EventDefinitionsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -197,7 +199,7 @@ func (s *eventDefinitions) EventDefinitionsUpdate(ctx context.Context, request o
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.EventDefinitionsUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

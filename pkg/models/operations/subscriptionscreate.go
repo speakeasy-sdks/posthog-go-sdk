@@ -21,6 +21,6 @@ type SubscriptionsCreateRequest struct {
 
 type SubscriptionsCreateResponse struct {
 	ContentType  string
-	StatusCode   int64
+	StatusCode   int
 	Subscription *shared.Subscription
 }

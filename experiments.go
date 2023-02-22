@@ -62,7 +62,7 @@ func (s *experiments) ExperimentsCreate(ctx context.Context, request operations.
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ExperimentsCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -104,7 +104,7 @@ func (s *experiments) ExperimentsDestroy(ctx context.Context, request operations
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ExperimentsDestroyResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -123,7 +123,9 @@ func (s *experiments) ExperimentsList(ctx context.Context, request operations.Ex
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -139,7 +141,7 @@ func (s *experiments) ExperimentsList(ctx context.Context, request operations.Ex
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ExperimentsListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -188,7 +190,7 @@ func (s *experiments) ExperimentsPartialUpdate(ctx context.Context, request oper
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ExperimentsPartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -230,7 +232,7 @@ func (s *experiments) ExperimentsRequiresFlagImplementationRetrieve(ctx context.
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ExperimentsRequiresFlagImplementationRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -272,7 +274,7 @@ func (s *experiments) ExperimentsResultsRetrieve(ctx context.Context, request op
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ExperimentsResultsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -314,7 +316,7 @@ func (s *experiments) ExperimentsRetrieve(ctx context.Context, request operation
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ExperimentsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -356,7 +358,7 @@ func (s *experiments) ExperimentsSecondaryResultsRetrieve(ctx context.Context, r
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ExperimentsSecondaryResultsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -408,7 +410,7 @@ func (s *experiments) ExperimentsUpdate(ctx context.Context, request operations.
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ExperimentsUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

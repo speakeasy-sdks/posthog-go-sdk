@@ -23,5 +23,5 @@ type RolesRoleMembershipsCreateRequest struct {
 type RolesRoleMembershipsCreateResponse struct {
 	ContentType    string
 	RoleMembership *shared.RoleMembershipOutput
-	StatusCode     int64
+	StatusCode     int
 }

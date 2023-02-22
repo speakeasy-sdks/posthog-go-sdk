@@ -23,5 +23,5 @@ type DashboardsPartialUpdateRequest struct {
 type DashboardsPartialUpdateResponse struct {
 	ContentType string
 	Dashboard   *shared.DashboardOutput
-	StatusCode  int64
+	StatusCode  int
 }

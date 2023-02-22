@@ -23,5 +23,5 @@ type DashboardsUpdateRequest struct {
 type DashboardsUpdateResponse struct {
 	ContentType string
 	Dashboard   *shared.DashboardOutput
-	StatusCode  int64
+	StatusCode  int
 }

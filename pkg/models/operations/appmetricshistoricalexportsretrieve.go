@@ -11,5 +11,5 @@ type AppMetricsHistoricalExportsRetrieveRequest struct {
 
 type AppMetricsHistoricalExportsRetrieveResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

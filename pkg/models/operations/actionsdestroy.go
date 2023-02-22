@@ -23,5 +23,5 @@ type ActionsDestroyRequest struct {
 
 type ActionsDestroyResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

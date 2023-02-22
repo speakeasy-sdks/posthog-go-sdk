@@ -16,5 +16,5 @@ type ListRequest struct {
 type ListResponse struct {
 	ContentType            string
 	PaginatedTeamBasicList *shared.PaginatedTeamBasicList
-	StatusCode             int64
+	StatusCode             int
 }

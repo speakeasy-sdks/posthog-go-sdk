@@ -21,6 +21,6 @@ type UpdateRequest struct {
 
 type UpdateResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 	Team        *shared.Team
 }

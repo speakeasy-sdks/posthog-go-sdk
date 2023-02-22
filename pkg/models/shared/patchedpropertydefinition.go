@@ -18,5 +18,5 @@ type PatchedPropertyDefinitionInput struct {
 	Name            *string                                    `json:"name,omitempty" form:"name=name" multipartForm:"name=name"`
 	PropertyType    *PatchedPropertyDefinitionPropertyTypeEnum `json:"property_type,omitempty" form:"name=property_type" multipartForm:"name=property_type"`
 	QueryUsage30Day *int64                                     `json:"query_usage_30_day,omitempty" form:"name=query_usage_30_day" multipartForm:"name=query_usage_30_day"`
-	Tags            []interface{}                              `json:"tags,omitempty" form:"name=tags,json" multipartForm:"name=tags,json"`
+	Tags            []interface{}                              `json:"tags,omitempty" form:"name=tags" multipartForm:"name=tags"`
 }

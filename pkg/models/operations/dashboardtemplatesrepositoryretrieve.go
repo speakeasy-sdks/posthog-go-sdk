@@ -10,5 +10,5 @@ type DashboardTemplatesRepositoryRetrieveRequest struct {
 
 type DashboardTemplatesRepositoryRetrieveResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

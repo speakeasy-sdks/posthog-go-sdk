@@ -62,7 +62,7 @@ func (s *resourceAccess) ResourceAccessCreate(ctx context.Context, request opera
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ResourceAccessCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -104,7 +104,7 @@ func (s *resourceAccess) ResourceAccessDestroy(ctx context.Context, request oper
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ResourceAccessDestroyResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -123,7 +123,9 @@ func (s *resourceAccess) ResourceAccessList(ctx context.Context, request operati
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -139,7 +141,7 @@ func (s *resourceAccess) ResourceAccessList(ctx context.Context, request operati
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ResourceAccessListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -188,7 +190,7 @@ func (s *resourceAccess) ResourceAccessPartialUpdate(ctx context.Context, reques
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ResourceAccessPartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -230,7 +232,7 @@ func (s *resourceAccess) ResourceAccessRetrieve(ctx context.Context, request ope
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ResourceAccessRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -282,7 +284,7 @@ func (s *resourceAccess) ResourceAccessUpdate(ctx context.Context, request opera
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ResourceAccessUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

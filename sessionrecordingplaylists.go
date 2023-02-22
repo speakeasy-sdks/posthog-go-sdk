@@ -59,7 +59,7 @@ func (s *sessionRecordingPlaylists) SessionRecordingPlaylistsCreate(ctx context.
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.SessionRecordingPlaylistsCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -102,7 +102,7 @@ func (s *sessionRecordingPlaylists) SessionRecordingPlaylistsDestroy(ctx context
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.SessionRecordingPlaylistsDestroyResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -121,7 +121,9 @@ func (s *sessionRecordingPlaylists) SessionRecordingPlaylistsList(ctx context.Co
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -137,7 +139,7 @@ func (s *sessionRecordingPlaylists) SessionRecordingPlaylistsList(ctx context.Co
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.SessionRecordingPlaylistsListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -186,7 +188,7 @@ func (s *sessionRecordingPlaylists) SessionRecordingPlaylistsPartialUpdate(ctx c
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.SessionRecordingPlaylistsPartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -235,7 +237,7 @@ func (s *sessionRecordingPlaylists) SessionRecordingPlaylistsRecordingsCreate(ct
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.SessionRecordingPlaylistsRecordingsCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -277,7 +279,7 @@ func (s *sessionRecordingPlaylists) SessionRecordingPlaylistsRecordingsDestroy(c
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.SessionRecordingPlaylistsRecordingsDestroyResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -310,7 +312,7 @@ func (s *sessionRecordingPlaylists) SessionRecordingPlaylistsRecordingsRetrieve(
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.SessionRecordingPlaylistsRecordingsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -352,7 +354,7 @@ func (s *sessionRecordingPlaylists) SessionRecordingPlaylistsRetrieve(ctx contex
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.SessionRecordingPlaylistsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -401,7 +403,7 @@ func (s *sessionRecordingPlaylists) SessionRecordingPlaylistsUpdate(ctx context.
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.SessionRecordingPlaylistsUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

@@ -22,5 +22,5 @@ type RolesRoleMembershipsListRequest struct {
 type RolesRoleMembershipsListResponse struct {
 	ContentType                 string
 	PaginatedRoleMembershipList *shared.PaginatedRoleMembershipList
-	StatusCode                  int64
+	StatusCode                  int
 }

@@ -11,5 +11,5 @@ type ResourceAccessDestroyRequest struct {
 
 type ResourceAccessDestroyResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

@@ -15,5 +15,5 @@ type ActivityLogImportantChangesRetrieveRequest struct {
 type ActivityLogImportantChangesRetrieveResponse struct {
 	ActivityLog *shared.ActivityLog
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

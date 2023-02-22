@@ -11,5 +11,5 @@ type HooksDestroyRequest struct {
 
 type HooksDestroyResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

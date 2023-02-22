@@ -12,5 +12,5 @@ type RolesRoleMembershipsDestroyRequest struct {
 
 type RolesRoleMembershipsDestroyResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

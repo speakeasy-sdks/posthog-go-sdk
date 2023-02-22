@@ -16,5 +16,5 @@ type ResourceAccessRetrieveRequest struct {
 type ResourceAccessRetrieveResponse struct {
 	ContentType                string
 	OrganizationResourceAccess *shared.OrganizationResourceAccess
-	StatusCode                 int64
+	StatusCode                 int
 }

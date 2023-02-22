@@ -52,7 +52,7 @@ func (s *prompts) PromptsMyPromptsPartialUpdate(ctx context.Context) (*operation
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PromptsMyPromptsPartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -86,7 +86,7 @@ func (s *prompts) PromptsMyPromptsPartialUpdate(ctx context.Context) (*operation
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PromptsMyPromptsPartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

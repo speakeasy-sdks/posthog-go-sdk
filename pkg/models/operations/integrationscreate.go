@@ -22,5 +22,5 @@ type IntegrationsCreateRequest struct {
 type IntegrationsCreateResponse struct {
 	ContentType string
 	Integration *shared.Integration
-	StatusCode  int64
+	StatusCode  int
 }

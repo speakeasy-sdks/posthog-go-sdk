@@ -63,7 +63,7 @@ func (s *hooks) HooksCreate(ctx context.Context, request operations.HooksCreateR
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.HooksCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -106,7 +106,7 @@ func (s *hooks) HooksDestroy(ctx context.Context, request operations.HooksDestro
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.HooksDestroyResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -126,7 +126,9 @@ func (s *hooks) HooksList(ctx context.Context, request operations.HooksListReque
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -142,7 +144,7 @@ func (s *hooks) HooksList(ctx context.Context, request operations.HooksListReque
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.HooksListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -192,7 +194,7 @@ func (s *hooks) HooksPartialUpdate(ctx context.Context, request operations.Hooks
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.HooksPartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -235,7 +237,7 @@ func (s *hooks) HooksRetrieve(ctx context.Context, request operations.HooksRetri
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.HooksRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -288,7 +290,7 @@ func (s *hooks) HooksUpdate(ctx context.Context, request operations.HooksUpdateR
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.HooksUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

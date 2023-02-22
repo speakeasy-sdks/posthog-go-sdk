@@ -16,5 +16,5 @@ type IntegrationsRetrieveRequest struct {
 type IntegrationsRetrieveResponse struct {
 	ContentType string
 	Integration *shared.Integration
-	StatusCode  int64
+	StatusCode  int
 }

@@ -23,5 +23,5 @@ type EventDefinitionsUpdateRequest struct {
 type EventDefinitionsUpdateResponse struct {
 	ContentType     string
 	EventDefinition *shared.EventDefinition
-	StatusCode      int64
+	StatusCode      int
 }

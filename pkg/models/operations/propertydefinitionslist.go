@@ -38,5 +38,5 @@ type PropertyDefinitionsListRequest struct {
 type PropertyDefinitionsListResponse struct {
 	ContentType                     string
 	PaginatedPropertyDefinitionList *shared.PaginatedPropertyDefinitionList
-	StatusCode                      int64
+	StatusCode                      int
 }

@@ -22,5 +22,5 @@ type PluginsCreateRequest struct {
 type PluginsCreateResponse struct {
 	ContentType string
 	Plugin      *shared.Plugin
-	StatusCode  int64
+	StatusCode  int
 }

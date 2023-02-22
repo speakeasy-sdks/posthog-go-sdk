@@ -23,5 +23,5 @@ type DashboardsMoveTilePartialUpdateRequest struct {
 type DashboardsMoveTilePartialUpdateResponse struct {
 	ContentType string
 	Dashboard   *shared.DashboardOutput
-	StatusCode  int64
+	StatusCode  int
 }

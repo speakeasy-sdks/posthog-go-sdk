@@ -21,5 +21,5 @@ type DomainsListRequest struct {
 type DomainsListResponse struct {
 	ContentType                     string
 	PaginatedOrganizationDomainList *shared.PaginatedOrganizationDomainList
-	StatusCode                      int64
+	StatusCode                      int
 }

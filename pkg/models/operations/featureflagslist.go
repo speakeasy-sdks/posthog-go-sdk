@@ -21,5 +21,5 @@ type FeatureFlagsListRequest struct {
 type FeatureFlagsListResponse struct {
 	ContentType              string
 	PaginatedFeatureFlagList *shared.PaginatedFeatureFlagList
-	StatusCode               int64
+	StatusCode               int
 }

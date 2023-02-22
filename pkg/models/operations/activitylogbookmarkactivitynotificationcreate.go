@@ -22,5 +22,5 @@ type ActivityLogBookmarkActivityNotificationCreateRequest struct {
 type ActivityLogBookmarkActivityNotificationCreateResponse struct {
 	ActivityLog *shared.ActivityLog
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

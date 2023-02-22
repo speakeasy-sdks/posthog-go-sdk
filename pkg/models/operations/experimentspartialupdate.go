@@ -23,5 +23,5 @@ type ExperimentsPartialUpdateRequest struct {
 type ExperimentsPartialUpdateResponse struct {
 	ContentType string
 	Experiment  *shared.Experiment
-	StatusCode  int64
+	StatusCode  int
 }

@@ -23,5 +23,5 @@ type MembersPartialUpdateRequest struct {
 type MembersPartialUpdateResponse struct {
 	ContentType        string
 	OrganizationMember *shared.OrganizationMember
-	StatusCode         int64
+	StatusCode         int
 }

@@ -62,7 +62,7 @@ func (s *pluginConfigs) PluginConfigsCreate(ctx context.Context, request operati
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginConfigsCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -104,7 +104,7 @@ func (s *pluginConfigs) PluginConfigsDestroy(ctx context.Context, request operat
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginConfigsDestroyResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -137,7 +137,7 @@ func (s *pluginConfigs) PluginConfigsFrontendRetrieve(ctx context.Context, reque
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginConfigsFrontendRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -189,7 +189,7 @@ func (s *pluginConfigs) PluginConfigsJobCreate(ctx context.Context, request oper
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginConfigsJobCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -217,7 +217,9 @@ func (s *pluginConfigs) PluginConfigsList(ctx context.Context, request operation
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -233,7 +235,7 @@ func (s *pluginConfigs) PluginConfigsList(ctx context.Context, request operation
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginConfigsListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -261,7 +263,9 @@ func (s *pluginConfigs) PluginConfigsLogsList(ctx context.Context, request opera
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -277,7 +281,7 @@ func (s *pluginConfigs) PluginConfigsLogsList(ctx context.Context, request opera
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginConfigsLogsListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -326,7 +330,7 @@ func (s *pluginConfigs) PluginConfigsPartialUpdate(ctx context.Context, request 
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginConfigsPartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -375,7 +379,7 @@ func (s *pluginConfigs) PluginConfigsRearrangePartialUpdate(ctx context.Context,
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginConfigsRearrangePartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -417,7 +421,7 @@ func (s *pluginConfigs) PluginConfigsRetrieve(ctx context.Context, request opera
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginConfigsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -469,7 +473,7 @@ func (s *pluginConfigs) PluginConfigsUpdate(ctx context.Context, request operati
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginConfigsUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

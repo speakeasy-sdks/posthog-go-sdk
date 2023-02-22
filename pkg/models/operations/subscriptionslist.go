@@ -21,5 +21,5 @@ type SubscriptionsListRequest struct {
 type SubscriptionsListResponse struct {
 	ContentType               string
 	PaginatedSubscriptionList *shared.PaginatedSubscriptionList
-	StatusCode                int64
+	StatusCode                int
 }

@@ -14,6 +14,6 @@ type IsGeneratingDemoDataRetrieveRequest struct {
 
 type IsGeneratingDemoDataRetrieveResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 	Team        *shared.Team
 }

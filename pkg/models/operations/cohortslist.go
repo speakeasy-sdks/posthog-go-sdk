@@ -21,5 +21,5 @@ type CohortsListRequest struct {
 type CohortsListResponse struct {
 	ContentType         string
 	PaginatedCohortList *shared.PaginatedCohortList
-	StatusCode          int64
+	StatusCode          int
 }

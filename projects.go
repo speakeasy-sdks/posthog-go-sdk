@@ -61,7 +61,7 @@ func (s *projects) Create(ctx context.Context, request operations.CreateRequest)
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.CreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -104,7 +104,7 @@ func (s *projects) Destroy(ctx context.Context, request operations.DestroyReques
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DestroyResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -124,7 +124,9 @@ func (s *projects) List(ctx context.Context, request operations.ListRequest) (*o
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -140,7 +142,7 @@ func (s *projects) List(ctx context.Context, request operations.ListRequest) (*o
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -190,7 +192,7 @@ func (s *projects) PartialUpdate(ctx context.Context, request operations.Partial
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -233,7 +235,7 @@ func (s *projects) Retrieve(ctx context.Context, request operations.RetrieveRequ
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.RetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -283,7 +285,7 @@ func (s *projects) Update(ctx context.Context, request operations.UpdateRequest)
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.UpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

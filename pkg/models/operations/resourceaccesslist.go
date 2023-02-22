@@ -21,5 +21,5 @@ type ResourceAccessListRequest struct {
 type ResourceAccessListResponse struct {
 	ContentType                             string
 	PaginatedOrganizationResourceAccessList *shared.PaginatedOrganizationResourceAccessList
-	StatusCode                              int64
+	StatusCode                              int
 }

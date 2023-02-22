@@ -21,5 +21,5 @@ type InvitesListRequest struct {
 type InvitesListResponse struct {
 	ContentType                     string
 	PaginatedOrganizationInviteList *shared.PaginatedOrganizationInviteList
-	StatusCode                      int64
+	StatusCode                      int
 }

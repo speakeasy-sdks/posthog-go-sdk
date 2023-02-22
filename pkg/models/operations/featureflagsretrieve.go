@@ -16,5 +16,5 @@ type FeatureFlagsRetrieveRequest struct {
 type FeatureFlagsRetrieveResponse struct {
 	ContentType string
 	FeatureFlag *shared.FeatureFlag
-	StatusCode  int64
+	StatusCode  int
 }

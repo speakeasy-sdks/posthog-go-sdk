@@ -21,5 +21,5 @@ type HooksListRequest struct {
 type HooksListResponse struct {
 	ContentType       string
 	PaginatedHookList *shared.PaginatedHookList
-	StatusCode        int64
+	StatusCode        int
 }

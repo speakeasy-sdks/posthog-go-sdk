@@ -22,5 +22,5 @@ type GroupsTypesUpdateMetadataPartialUpdateRequest struct {
 type GroupsTypesUpdateMetadataPartialUpdateResponse struct {
 	ContentType string
 	GroupType   *shared.GroupType
-	StatusCode  int64
+	StatusCode  int
 }

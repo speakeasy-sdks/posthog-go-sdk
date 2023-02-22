@@ -14,6 +14,6 @@ type RetrieveRequest struct {
 
 type RetrieveResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 	Team        *shared.Team
 }

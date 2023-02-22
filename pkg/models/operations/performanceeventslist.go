@@ -21,5 +21,5 @@ type PerformanceEventsListRequest struct {
 type PerformanceEventsListResponse struct {
 	ContentType                   string
 	PaginatedPerformanceEventList *shared.PaginatedPerformanceEventList
-	StatusCode                    int64
+	StatusCode                    int
 }

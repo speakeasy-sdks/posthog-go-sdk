@@ -14,7 +14,7 @@ type DashboardInput struct {
 	Name             *string                `json:"name,omitempty" form:"name=name" multipartForm:"name=name"`
 	Pinned           *bool                  `json:"pinned,omitempty" form:"name=pinned" multipartForm:"name=pinned"`
 	RestrictionLevel *int64                 `json:"restriction_level,omitempty" form:"name=restriction_level" multipartForm:"name=restriction_level"`
-	Tags             []interface{}          `json:"tags,omitempty" form:"name=tags,json" multipartForm:"name=tags,json"`
+	Tags             []interface{}          `json:"tags,omitempty" form:"name=tags" multipartForm:"name=tags"`
 	UseDashboard     *int64                 `json:"use_dashboard,omitempty" form:"name=use_dashboard" multipartForm:"name=use_dashboard"`
 	UseTemplate      *string                `json:"use_template,omitempty" form:"name=use_template" multipartForm:"name=use_template"`
 }

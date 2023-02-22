@@ -21,5 +21,5 @@ type ExperimentsListRequest struct {
 type ExperimentsListResponse struct {
 	ContentType             string
 	PaginatedExperimentList *shared.PaginatedExperimentList
-	StatusCode              int64
+	StatusCode              int
 }

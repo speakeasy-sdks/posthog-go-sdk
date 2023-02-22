@@ -62,7 +62,7 @@ func (s *subscriptions) SubscriptionsCreate(ctx context.Context, request operati
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.SubscriptionsCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -105,7 +105,7 @@ func (s *subscriptions) SubscriptionsDestroy(ctx context.Context, request operat
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.SubscriptionsDestroyResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -124,7 +124,9 @@ func (s *subscriptions) SubscriptionsList(ctx context.Context, request operation
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -140,7 +142,7 @@ func (s *subscriptions) SubscriptionsList(ctx context.Context, request operation
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.SubscriptionsListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -189,7 +191,7 @@ func (s *subscriptions) SubscriptionsPartialUpdate(ctx context.Context, request 
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.SubscriptionsPartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -231,7 +233,7 @@ func (s *subscriptions) SubscriptionsRetrieve(ctx context.Context, request opera
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.SubscriptionsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -283,7 +285,7 @@ func (s *subscriptions) SubscriptionsUpdate(ctx context.Context, request operati
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.SubscriptionsUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

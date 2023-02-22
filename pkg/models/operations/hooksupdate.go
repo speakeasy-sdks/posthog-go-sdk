@@ -23,5 +23,5 @@ type HooksUpdateRequest struct {
 type HooksUpdateResponse struct {
 	ContentType string
 	Hook        *shared.Hook
-	StatusCode  int64
+	StatusCode  int
 }

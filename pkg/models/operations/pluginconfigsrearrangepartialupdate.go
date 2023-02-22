@@ -22,5 +22,5 @@ type PluginConfigsRearrangePartialUpdateRequest struct {
 type PluginConfigsRearrangePartialUpdateResponse struct {
 	ContentType  string
 	PluginConfig *shared.PluginConfig
-	StatusCode   int64
+	StatusCode   int
 }

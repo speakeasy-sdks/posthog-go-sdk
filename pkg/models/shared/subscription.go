@@ -37,7 +37,7 @@ const (
 // Standard Subscription serializer.
 type SubscriptionInput struct {
 	Bysetpos      *int64                      `json:"bysetpos,omitempty" form:"name=bysetpos" multipartForm:"name=bysetpos"`
-	Byweekday     []SubscriptionByweekdayEnum `json:"byweekday,omitempty" form:"name=byweekday,json" multipartForm:"name=byweekday,json"`
+	Byweekday     []SubscriptionByweekdayEnum `json:"byweekday,omitempty" form:"name=byweekday" multipartForm:"name=byweekday"`
 	Count         *int64                      `json:"count,omitempty" form:"name=count" multipartForm:"name=count"`
 	Dashboard     *int64                      `json:"dashboard,omitempty" form:"name=dashboard" multipartForm:"name=dashboard"`
 	Deleted       *bool                       `json:"deleted,omitempty" form:"name=deleted" multipartForm:"name=deleted"`

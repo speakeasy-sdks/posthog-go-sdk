@@ -23,5 +23,5 @@ type SessionRecordingPlaylistsPartialUpdateRequest struct {
 type SessionRecordingPlaylistsPartialUpdateResponse struct {
 	ContentType              string
 	SessionRecordingPlaylist *shared.SessionRecordingPlaylist
-	StatusCode               int64
+	StatusCode               int
 }

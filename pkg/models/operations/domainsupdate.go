@@ -23,5 +23,5 @@ type DomainsUpdateRequest struct {
 type DomainsUpdateResponse struct {
 	ContentType        string
 	OrganizationDomain *shared.OrganizationDomain
-	StatusCode         int64
+	StatusCode         int
 }

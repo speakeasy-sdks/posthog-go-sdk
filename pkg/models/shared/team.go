@@ -486,7 +486,7 @@ type Team struct {
 type TeamInput struct {
 	AccessControl                    *bool                  `json:"access_control,omitempty" form:"name=access_control" multipartForm:"name=access_control"`
 	AnonymizeIps                     *bool                  `json:"anonymize_ips,omitempty" form:"name=anonymize_ips" multipartForm:"name=anonymize_ips"`
-	AppUrls                          []string               `json:"app_urls,omitempty" form:"name=app_urls,json" multipartForm:"name=app_urls,json"`
+	AppUrls                          []string               `json:"app_urls,omitempty" form:"name=app_urls" multipartForm:"name=app_urls"`
 	CaptureConsoleLogOptIn           *bool                  `json:"capture_console_log_opt_in,omitempty" form:"name=capture_console_log_opt_in" multipartForm:"name=capture_console_log_opt_in"`
 	CapturePerformanceOptIn          *bool                  `json:"capture_performance_opt_in,omitempty" form:"name=capture_performance_opt_in" multipartForm:"name=capture_performance_opt_in"`
 	CompletedSnippetOnboarding       *bool                  `json:"completed_snippet_onboarding,omitempty" form:"name=completed_snippet_onboarding" multipartForm:"name=completed_snippet_onboarding"`
@@ -494,12 +494,12 @@ type TeamInput struct {
 	DataAttributes                   map[string]interface{} `json:"data_attributes,omitempty" form:"name=data_attributes,json" multipartForm:"name=data_attributes,json"`
 	InjectWebApps                    *bool                  `json:"inject_web_apps,omitempty" form:"name=inject_web_apps" multipartForm:"name=inject_web_apps"`
 	IsDemo                           *bool                  `json:"is_demo,omitempty" form:"name=is_demo" multipartForm:"name=is_demo"`
-	LiveEventsColumns                []string               `json:"live_events_columns,omitempty" form:"name=live_events_columns,json" multipartForm:"name=live_events_columns,json"`
+	LiveEventsColumns                []string               `json:"live_events_columns,omitempty" form:"name=live_events_columns" multipartForm:"name=live_events_columns"`
 	Name                             *string                `json:"name,omitempty" form:"name=name" multipartForm:"name=name"`
 	PathCleaningFilters              map[string]interface{} `json:"path_cleaning_filters,omitempty" form:"name=path_cleaning_filters,json" multipartForm:"name=path_cleaning_filters,json"`
-	PersonDisplayNameProperties      []string               `json:"person_display_name_properties,omitempty" form:"name=person_display_name_properties,json" multipartForm:"name=person_display_name_properties,json"`
+	PersonDisplayNameProperties      []string               `json:"person_display_name_properties,omitempty" form:"name=person_display_name_properties" multipartForm:"name=person_display_name_properties"`
 	PrimaryDashboard                 *int64                 `json:"primary_dashboard,omitempty" form:"name=primary_dashboard" multipartForm:"name=primary_dashboard"`
-	RecordingDomains                 []string               `json:"recording_domains,omitempty" form:"name=recording_domains,json" multipartForm:"name=recording_domains,json"`
+	RecordingDomains                 []string               `json:"recording_domains,omitempty" form:"name=recording_domains" multipartForm:"name=recording_domains"`
 	SessionRecordingOptIn            *bool                  `json:"session_recording_opt_in,omitempty" form:"name=session_recording_opt_in" multipartForm:"name=session_recording_opt_in"`
 	SlackIncomingWebhook             *string                `json:"slack_incoming_webhook,omitempty" form:"name=slack_incoming_webhook" multipartForm:"name=slack_incoming_webhook"`
 	TestAccountFilters               map[string]interface{} `json:"test_account_filters,omitempty" form:"name=test_account_filters,json" multipartForm:"name=test_account_filters,json"`

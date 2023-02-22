@@ -62,7 +62,7 @@ func (s *roles) RolesCreate(ctx context.Context, request operations.RolesCreateR
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.RolesCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -104,7 +104,7 @@ func (s *roles) RolesDestroy(ctx context.Context, request operations.RolesDestro
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.RolesDestroyResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -123,7 +123,9 @@ func (s *roles) RolesList(ctx context.Context, request operations.RolesListReque
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -139,7 +141,7 @@ func (s *roles) RolesList(ctx context.Context, request operations.RolesListReque
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.RolesListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -188,7 +190,7 @@ func (s *roles) RolesPartialUpdate(ctx context.Context, request operations.Roles
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.RolesPartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -230,7 +232,7 @@ func (s *roles) RolesRetrieve(ctx context.Context, request operations.RolesRetri
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.RolesRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -282,7 +284,7 @@ func (s *roles) RolesRoleMembershipsCreate(ctx context.Context, request operatio
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.RolesRoleMembershipsCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -324,7 +326,7 @@ func (s *roles) RolesRoleMembershipsDestroy(ctx context.Context, request operati
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.RolesRoleMembershipsDestroyResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -343,7 +345,9 @@ func (s *roles) RolesRoleMembershipsList(ctx context.Context, request operations
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -359,7 +363,7 @@ func (s *roles) RolesRoleMembershipsList(ctx context.Context, request operations
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.RolesRoleMembershipsListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -411,7 +415,7 @@ func (s *roles) RolesUpdate(ctx context.Context, request operations.RolesUpdateR
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.RolesUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

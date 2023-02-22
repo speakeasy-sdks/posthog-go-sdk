@@ -11,5 +11,5 @@ type AnnotationsDestroyRequest struct {
 
 type AnnotationsDestroyResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

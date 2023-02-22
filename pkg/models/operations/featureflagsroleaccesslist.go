@@ -22,5 +22,5 @@ type FeatureFlagsRoleAccessListRequest struct {
 type FeatureFlagsRoleAccessListResponse struct {
 	ContentType                        string
 	PaginatedFeatureFlagRoleAccessList *shared.PaginatedFeatureFlagRoleAccessList
-	StatusCode                         int64
+	StatusCode                         int
 }

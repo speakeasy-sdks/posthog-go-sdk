@@ -29,5 +29,5 @@ type CohortsPersonsRetrieveResponse struct {
 	Body        []byte
 	Cohort      *shared.Cohort
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

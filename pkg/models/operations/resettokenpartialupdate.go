@@ -21,6 +21,6 @@ type ResetTokenPartialUpdateRequest struct {
 
 type ResetTokenPartialUpdateResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 	Team        *shared.Team
 }

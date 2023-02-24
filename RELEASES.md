@@ -31,3 +31,11 @@ Based on:
 - Speakeasy CLI 1.4.8 https://github.com/speakeasy-api/speakeasy
 ### Releases
 - [Go v0.3.1] https://github.com/speakeasy-sdks/posthog-go-sdk/releases/tag/v0.3.1 - ./
+
+## Version 0.4.0
+### Changes
+Based on:
+- OpenAPI Doc 0.0.0 ./schema.yaml
+- Speakeasy CLI 1.5.0 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [Go v0.4.0] https://github.com/speakeasy-sdks/posthog-go-sdk/releases/tag/v0.4.0 - ./

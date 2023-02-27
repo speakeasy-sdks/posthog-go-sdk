@@ -35,5 +35,5 @@ type PersonsFunnelCreateResponse struct {
 	Body        []byte
 	ContentType string
 	Person      *shared.Person
-	StatusCode  int64
+	StatusCode  int
 }

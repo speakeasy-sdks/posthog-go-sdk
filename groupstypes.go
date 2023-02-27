@@ -52,7 +52,7 @@ func (s *groupsTypes) GroupsTypesList(ctx context.Context, request operations.Gr
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GroupsTypesListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -101,7 +101,7 @@ func (s *groupsTypes) GroupsTypesUpdateMetadataPartialUpdate(ctx context.Context
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GroupsTypesUpdateMetadataPartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

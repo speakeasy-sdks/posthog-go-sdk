@@ -23,5 +23,5 @@ type PluginsUpgradeCreateRequest struct {
 type PluginsUpgradeCreateResponse struct {
 	ContentType string
 	Plugin      *shared.Plugin
-	StatusCode  int64
+	StatusCode  int
 }

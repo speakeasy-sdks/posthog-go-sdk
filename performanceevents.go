@@ -38,7 +38,9 @@ func (s *performanceEvents) PerformanceEventsList(ctx context.Context, request o
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -54,7 +56,7 @@ func (s *performanceEvents) PerformanceEventsList(ctx context.Context, request o
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PerformanceEventsListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -96,7 +98,7 @@ func (s *performanceEvents) PerformanceEventsRecentPageviewsRetrieve(ctx context
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PerformanceEventsRecentPageviewsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

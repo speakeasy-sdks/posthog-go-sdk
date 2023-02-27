@@ -21,5 +21,5 @@ type PluginsListRequest struct {
 type PluginsListResponse struct {
 	ContentType         string
 	PaginatedPluginList *shared.PaginatedPluginList
-	StatusCode          int64
+	StatusCode          int
 }

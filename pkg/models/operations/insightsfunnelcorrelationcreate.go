@@ -29,5 +29,5 @@ type InsightsFunnelCorrelationCreateResponse struct {
 	Body        []byte
 	ContentType string
 	Insight     *shared.Insight
-	StatusCode  int64
+	StatusCode  int
 }

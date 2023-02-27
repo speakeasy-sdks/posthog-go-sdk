@@ -51,7 +51,7 @@ func (s *appMetrics) AppMetricsErrorDetailsRetrieve(ctx context.Context, request
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.AppMetricsErrorDetailsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -84,7 +84,7 @@ func (s *appMetrics) AppMetricsHistoricalExportsRetrieve(ctx context.Context, re
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.AppMetricsHistoricalExportsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -117,7 +117,7 @@ func (s *appMetrics) AppMetricsHistoricalExportsRetrieve2(ctx context.Context, r
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.AppMetricsHistoricalExportsRetrieve2Response{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -150,7 +150,7 @@ func (s *appMetrics) AppMetricsRetrieve(ctx context.Context, request operations.
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.AppMetricsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

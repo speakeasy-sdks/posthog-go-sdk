@@ -16,5 +16,5 @@ type FeatureFlagsActivityRetrieve2Request struct {
 type FeatureFlagsActivityRetrieve2Response struct {
 	ContentType string
 	FeatureFlag *shared.FeatureFlag
-	StatusCode  int64
+	StatusCode  int
 }

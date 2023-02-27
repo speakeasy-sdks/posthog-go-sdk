@@ -11,5 +11,5 @@ type CohortsDestroyRequest struct {
 
 type CohortsDestroyResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

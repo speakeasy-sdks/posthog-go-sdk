@@ -52,7 +52,7 @@ func (s *exports) ExportsContentRetrieve(ctx context.Context, request operations
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ExportsContentRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -104,7 +104,7 @@ func (s *exports) ExportsCreate(ctx context.Context, request operations.ExportsC
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ExportsCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -146,7 +146,7 @@ func (s *exports) ExportsRetrieve(ctx context.Context, request operations.Export
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ExportsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

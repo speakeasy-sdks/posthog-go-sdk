@@ -11,5 +11,5 @@ type DashboardsDestroyRequest struct {
 
 type DashboardsDestroyResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

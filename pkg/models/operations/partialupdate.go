@@ -21,6 +21,6 @@ type PartialUpdateRequest struct {
 
 type PartialUpdateResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 	Team        *shared.Team
 }

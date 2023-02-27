@@ -11,5 +11,5 @@ type PluginConfigsDestroyRequest struct {
 
 type PluginConfigsDestroyResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

@@ -29,5 +29,5 @@ type ActionsCountRetrieveResponse struct {
 	Action      *shared.Action
 	Body        []byte
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

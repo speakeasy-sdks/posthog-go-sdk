@@ -21,5 +21,5 @@ type IntegrationsListRequest struct {
 type IntegrationsListResponse struct {
 	ContentType              string
 	PaginatedIntegrationList *shared.PaginatedIntegrationList
-	StatusCode               int64
+	StatusCode               int
 }

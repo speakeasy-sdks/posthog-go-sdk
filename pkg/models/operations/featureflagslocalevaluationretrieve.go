@@ -15,5 +15,5 @@ type FeatureFlagsLocalEvaluationRetrieveRequest struct {
 type FeatureFlagsLocalEvaluationRetrieveResponse struct {
 	ContentType string
 	FeatureFlag *shared.FeatureFlag
-	StatusCode  int64
+	StatusCode  int
 }

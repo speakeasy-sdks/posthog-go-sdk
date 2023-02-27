@@ -62,7 +62,7 @@ func (s *organizations) DomainsCreate(ctx context.Context, request operations.Do
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DomainsCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -104,7 +104,7 @@ func (s *organizations) DomainsDestroy(ctx context.Context, request operations.D
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DomainsDestroyResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -123,7 +123,9 @@ func (s *organizations) DomainsList(ctx context.Context, request operations.Doma
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -139,7 +141,7 @@ func (s *organizations) DomainsList(ctx context.Context, request operations.Doma
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DomainsListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -188,7 +190,7 @@ func (s *organizations) DomainsPartialUpdate(ctx context.Context, request operat
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DomainsPartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -230,7 +232,7 @@ func (s *organizations) DomainsRetrieve(ctx context.Context, request operations.
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DomainsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -282,7 +284,7 @@ func (s *organizations) DomainsUpdate(ctx context.Context, request operations.Do
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DomainsUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -334,7 +336,7 @@ func (s *organizations) DomainsVerifyCreate(ctx context.Context, request operati
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DomainsVerifyCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -386,7 +388,7 @@ func (s *organizations) InvitesBulkCreate(ctx context.Context, request operation
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.InvitesBulkCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -438,7 +440,7 @@ func (s *organizations) InvitesCreate(ctx context.Context, request operations.In
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.InvitesCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -480,7 +482,7 @@ func (s *organizations) InvitesDestroy(ctx context.Context, request operations.I
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.InvitesDestroyResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -499,7 +501,9 @@ func (s *organizations) InvitesList(ctx context.Context, request operations.Invi
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -515,7 +519,7 @@ func (s *organizations) InvitesList(ctx context.Context, request operations.Invi
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.InvitesListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -557,7 +561,7 @@ func (s *organizations) MembersDestroy(ctx context.Context, request operations.M
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.MembersDestroyResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -576,7 +580,9 @@ func (s *organizations) MembersList(ctx context.Context, request operations.Memb
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -592,7 +598,7 @@ func (s *organizations) MembersList(ctx context.Context, request operations.Memb
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.MembersListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -641,7 +647,7 @@ func (s *organizations) MembersPartialUpdate(ctx context.Context, request operat
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.MembersPartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -690,7 +696,7 @@ func (s *organizations) MembersUpdate(ctx context.Context, request operations.Me
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.MembersUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -732,7 +738,7 @@ func (s *organizations) PluginsActivityRetrieve(ctx context.Context, request ope
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginsActivityRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -774,7 +780,7 @@ func (s *organizations) PluginsCheckForUpdatesRetrieve(ctx context.Context, requ
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginsCheckForUpdatesRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -823,7 +829,7 @@ func (s *organizations) PluginsCreate(ctx context.Context, request operations.Pl
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginsCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -865,7 +871,7 @@ func (s *organizations) PluginsDestroy(ctx context.Context, request operations.P
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginsDestroyResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -884,7 +890,9 @@ func (s *organizations) PluginsList(ctx context.Context, request operations.Plug
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -900,7 +908,7 @@ func (s *organizations) PluginsList(ctx context.Context, request operations.Plug
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginsListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -949,7 +957,7 @@ func (s *organizations) PluginsPartialUpdate(ctx context.Context, request operat
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginsPartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -991,7 +999,7 @@ func (s *organizations) PluginsRepositoryRetrieve(ctx context.Context, request o
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginsRepositoryRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -1033,7 +1041,7 @@ func (s *organizations) PluginsRetrieve(ctx context.Context, request operations.
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -1075,7 +1083,7 @@ func (s *organizations) PluginsSourceRetrieve(ctx context.Context, request opera
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginsSourceRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -1124,7 +1132,7 @@ func (s *organizations) PluginsUpdate(ctx context.Context, request operations.Pl
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginsUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -1173,7 +1181,7 @@ func (s *organizations) PluginsUpdateSourcePartialUpdate(ctx context.Context, re
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginsUpdateSourcePartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -1222,7 +1230,7 @@ func (s *organizations) PluginsUpgradeCreate(ctx context.Context, request operat
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginsUpgradeCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -1274,7 +1282,7 @@ func (s *organizations) ResourceAccessCreate(ctx context.Context, request operat
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ResourceAccessCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -1316,7 +1324,7 @@ func (s *organizations) ResourceAccessDestroy(ctx context.Context, request opera
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ResourceAccessDestroyResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -1335,7 +1343,9 @@ func (s *organizations) ResourceAccessList(ctx context.Context, request operatio
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -1351,7 +1361,7 @@ func (s *organizations) ResourceAccessList(ctx context.Context, request operatio
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ResourceAccessListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -1400,7 +1410,7 @@ func (s *organizations) ResourceAccessPartialUpdate(ctx context.Context, request
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ResourceAccessPartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -1442,7 +1452,7 @@ func (s *organizations) ResourceAccessRetrieve(ctx context.Context, request oper
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ResourceAccessRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -1494,7 +1504,7 @@ func (s *organizations) ResourceAccessUpdate(ctx context.Context, request operat
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ResourceAccessUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -1546,7 +1556,7 @@ func (s *organizations) RolesCreate(ctx context.Context, request operations.Role
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.RolesCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -1588,7 +1598,7 @@ func (s *organizations) RolesDestroy(ctx context.Context, request operations.Rol
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.RolesDestroyResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -1607,7 +1617,9 @@ func (s *organizations) RolesList(ctx context.Context, request operations.RolesL
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -1623,7 +1635,7 @@ func (s *organizations) RolesList(ctx context.Context, request operations.RolesL
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.RolesListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -1672,7 +1684,7 @@ func (s *organizations) RolesPartialUpdate(ctx context.Context, request operatio
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.RolesPartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -1714,7 +1726,7 @@ func (s *organizations) RolesRetrieve(ctx context.Context, request operations.Ro
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.RolesRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -1766,7 +1778,7 @@ func (s *organizations) RolesRoleMembershipsCreate(ctx context.Context, request 
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.RolesRoleMembershipsCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -1808,7 +1820,7 @@ func (s *organizations) RolesRoleMembershipsDestroy(ctx context.Context, request
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.RolesRoleMembershipsDestroyResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -1827,7 +1839,9 @@ func (s *organizations) RolesRoleMembershipsList(ctx context.Context, request op
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -1843,7 +1857,7 @@ func (s *organizations) RolesRoleMembershipsList(ctx context.Context, request op
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.RolesRoleMembershipsListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -1895,7 +1909,7 @@ func (s *organizations) RolesUpdate(ctx context.Context, request operations.Role
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.RolesUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

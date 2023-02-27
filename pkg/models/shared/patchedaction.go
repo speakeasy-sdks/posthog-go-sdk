@@ -14,5 +14,5 @@ type PatchedActionInput struct {
 	PostToSlack        *bool         `json:"post_to_slack,omitempty" form:"name=post_to_slack" multipartForm:"name=post_to_slack"`
 	SlackMessageFormat *string       `json:"slack_message_format,omitempty" form:"name=slack_message_format" multipartForm:"name=slack_message_format"`
 	Steps              []ActionStep  `json:"steps,omitempty" form:"name=steps,json" multipartForm:"name=steps,json"`
-	Tags               []interface{} `json:"tags,omitempty" form:"name=tags,json" multipartForm:"name=tags,json"`
+	Tags               []interface{} `json:"tags,omitempty" form:"name=tags" multipartForm:"name=tags"`
 }

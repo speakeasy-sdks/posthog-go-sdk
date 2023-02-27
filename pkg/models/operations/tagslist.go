@@ -21,5 +21,5 @@ type TagsListRequest struct {
 type TagsListResponse struct {
 	ContentType             string
 	PaginatedTaggedItemList *shared.PaginatedTaggedItemList
-	StatusCode              int64
+	StatusCode              int
 }

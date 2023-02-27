@@ -16,7 +16,7 @@ type FeatureFlagInput struct {
 	Name                       *string                `json:"name,omitempty" form:"name=name" multipartForm:"name=name"`
 	PerformedRollback          *bool                  `json:"performed_rollback,omitempty" form:"name=performed_rollback" multipartForm:"name=performed_rollback"`
 	RollbackConditions         map[string]interface{} `json:"rollback_conditions,omitempty" form:"name=rollback_conditions,json" multipartForm:"name=rollback_conditions,json"`
-	Tags                       []interface{}          `json:"tags,omitempty" form:"name=tags,json" multipartForm:"name=tags,json"`
+	Tags                       []interface{}          `json:"tags,omitempty" form:"name=tags" multipartForm:"name=tags"`
 }
 
 type FeatureFlagCreatedBy struct {

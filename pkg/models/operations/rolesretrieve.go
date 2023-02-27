@@ -16,5 +16,5 @@ type RolesRetrieveRequest struct {
 type RolesRetrieveResponse struct {
 	ContentType string
 	Role        *shared.Role
-	StatusCode  int64
+	StatusCode  int
 }

@@ -21,5 +21,5 @@ type GroupsListRequest struct {
 type GroupsListResponse struct {
 	ContentType        string
 	PaginatedGroupList *shared.PaginatedGroupList
-	StatusCode         int64
+	StatusCode         int
 }

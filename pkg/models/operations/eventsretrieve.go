@@ -29,5 +29,5 @@ type EventsRetrieveResponse struct {
 	Body            []byte
 	ClickhouseEvent *shared.ClickhouseEvent
 	ContentType     string
-	StatusCode      int64
+	StatusCode      int
 }

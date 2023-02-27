@@ -22,5 +22,5 @@ type AnnotationsCreateRequest struct {
 type AnnotationsCreateResponse struct {
 	Annotation  *shared.Annotation
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

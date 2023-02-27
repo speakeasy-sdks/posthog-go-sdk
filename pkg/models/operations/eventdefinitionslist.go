@@ -21,5 +21,5 @@ type EventDefinitionsListRequest struct {
 type EventDefinitionsListResponse struct {
 	ContentType                  string
 	PaginatedEventDefinitionList *shared.PaginatedEventDefinitionList
-	StatusCode                   int64
+	StatusCode                   int
 }

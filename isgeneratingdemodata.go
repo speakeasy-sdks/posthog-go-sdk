@@ -53,7 +53,7 @@ func (s *isGeneratingDemoData) IsGeneratingDemoDataRetrieve(ctx context.Context,
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.IsGeneratingDemoDataRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

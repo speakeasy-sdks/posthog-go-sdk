@@ -88,8 +88,8 @@ func WithClient(client HTTPClient) SDKOption {
 func New(opts ...SDKOption) *Posthog {
 	sdk := &Posthog{
 		_language:   "go",
-		_sdkVersion: "0.2.0",
-		_genVersion: "1.3.1",
+		_sdkVersion: "0.4.1",
+		_genVersion: "1.5.3",
 	}
 	for _, opt := range opts {
 		opt(sdk)

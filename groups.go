@@ -38,7 +38,9 @@ func (s *groups) GroupsFindRetrieve(ctx context.Context, request operations.Grou
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -54,7 +56,7 @@ func (s *groups) GroupsFindRetrieve(ctx context.Context, request operations.Grou
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GroupsFindRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -82,7 +84,9 @@ func (s *groups) GroupsList(ctx context.Context, request operations.GroupsListRe
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -98,7 +102,7 @@ func (s *groups) GroupsList(ctx context.Context, request operations.GroupsListRe
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GroupsListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -140,7 +144,7 @@ func (s *groups) GroupsPropertyDefinitionsRetrieve(ctx context.Context, request 
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GroupsPropertyDefinitionsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -168,7 +172,9 @@ func (s *groups) GroupsPropertyValuesRetrieve(ctx context.Context, request opera
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -184,7 +190,7 @@ func (s *groups) GroupsPropertyValuesRetrieve(ctx context.Context, request opera
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GroupsPropertyValuesRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -212,7 +218,9 @@ func (s *groups) GroupsRelatedRetrieve(ctx context.Context, request operations.G
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -228,7 +236,7 @@ func (s *groups) GroupsRelatedRetrieve(ctx context.Context, request operations.G
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GroupsRelatedRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

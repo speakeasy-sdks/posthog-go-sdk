@@ -23,5 +23,5 @@ type AnnotationsPartialUpdateRequest struct {
 type AnnotationsPartialUpdateResponse struct {
 	Annotation  *shared.Annotation
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

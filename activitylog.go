@@ -62,7 +62,7 @@ func (s *activityLog) ActivityLogBookmarkActivityNotificationCreate(ctx context.
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ActivityLogBookmarkActivityNotificationCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -104,7 +104,7 @@ func (s *activityLog) ActivityLogImportantChangesRetrieve(ctx context.Context, r
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ActivityLogImportantChangesRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

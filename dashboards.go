@@ -59,7 +59,7 @@ func (s *dashboards) DashboardsCreate(ctx context.Context, request operations.Da
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DashboardsCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -102,7 +102,7 @@ func (s *dashboards) DashboardsDestroy(ctx context.Context, request operations.D
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DashboardsDestroyResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -121,7 +121,9 @@ func (s *dashboards) DashboardsList(ctx context.Context, request operations.Dash
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -137,7 +139,7 @@ func (s *dashboards) DashboardsList(ctx context.Context, request operations.Dash
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DashboardsListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -186,7 +188,7 @@ func (s *dashboards) DashboardsMoveTilePartialUpdate(ctx context.Context, reques
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DashboardsMoveTilePartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -235,7 +237,7 @@ func (s *dashboards) DashboardsPartialUpdate(ctx context.Context, request operat
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DashboardsPartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -277,7 +279,7 @@ func (s *dashboards) DashboardsRetrieve(ctx context.Context, request operations.
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DashboardsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -326,7 +328,7 @@ func (s *dashboards) DashboardsUpdate(ctx context.Context, request operations.Da
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DashboardsUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

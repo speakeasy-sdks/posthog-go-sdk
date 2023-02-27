@@ -11,5 +11,5 @@ type SessionRecordingPlaylistsDestroyRequest struct {
 
 type SessionRecordingPlaylistsDestroyResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

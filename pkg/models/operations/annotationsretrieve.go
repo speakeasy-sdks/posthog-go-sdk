@@ -16,5 +16,5 @@ type AnnotationsRetrieveRequest struct {
 type AnnotationsRetrieveResponse struct {
 	Annotation  *shared.Annotation
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

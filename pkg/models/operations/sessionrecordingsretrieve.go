@@ -10,5 +10,5 @@ type SessionRecordingsRetrieveRequest struct {
 
 type SessionRecordingsRetrieveResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

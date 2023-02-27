@@ -52,7 +52,7 @@ func (s *plugins) PluginsActivityRetrieve(ctx context.Context, request operation
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginsActivityRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -94,7 +94,7 @@ func (s *plugins) PluginsCheckForUpdatesRetrieve(ctx context.Context, request op
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginsCheckForUpdatesRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -143,7 +143,7 @@ func (s *plugins) PluginsCreate(ctx context.Context, request operations.PluginsC
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginsCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -185,7 +185,7 @@ func (s *plugins) PluginsDestroy(ctx context.Context, request operations.Plugins
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginsDestroyResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -204,7 +204,9 @@ func (s *plugins) PluginsList(ctx context.Context, request operations.PluginsLis
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -220,7 +222,7 @@ func (s *plugins) PluginsList(ctx context.Context, request operations.PluginsLis
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginsListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -269,7 +271,7 @@ func (s *plugins) PluginsPartialUpdate(ctx context.Context, request operations.P
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginsPartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -311,7 +313,7 @@ func (s *plugins) PluginsRepositoryRetrieve(ctx context.Context, request operati
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginsRepositoryRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -353,7 +355,7 @@ func (s *plugins) PluginsRetrieve(ctx context.Context, request operations.Plugin
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -395,7 +397,7 @@ func (s *plugins) PluginsSourceRetrieve(ctx context.Context, request operations.
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginsSourceRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -444,7 +446,7 @@ func (s *plugins) PluginsUpdate(ctx context.Context, request operations.PluginsU
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginsUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -493,7 +495,7 @@ func (s *plugins) PluginsUpdateSourcePartialUpdate(ctx context.Context, request 
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginsUpdateSourcePartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -542,7 +544,7 @@ func (s *plugins) PluginsUpgradeCreate(ctx context.Context, request operations.P
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PluginsUpgradeCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

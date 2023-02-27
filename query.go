@@ -37,7 +37,9 @@ func (s *query) QueryRetrieve(ctx context.Context, request operations.QueryRetri
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -53,7 +55,7 @@ func (s *query) QueryRetrieve(ctx context.Context, request operations.QueryRetri
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.QueryRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

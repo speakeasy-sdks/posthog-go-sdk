@@ -30,5 +30,5 @@ type ActionsListResponse struct {
 	Body                []byte
 	ContentType         string
 	PaginatedActionList *shared.PaginatedActionList
-	StatusCode          int64
+	StatusCode          int
 }

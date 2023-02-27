@@ -62,7 +62,7 @@ func (s *domains) DomainsCreate(ctx context.Context, request operations.DomainsC
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DomainsCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -104,7 +104,7 @@ func (s *domains) DomainsDestroy(ctx context.Context, request operations.Domains
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DomainsDestroyResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -123,7 +123,9 @@ func (s *domains) DomainsList(ctx context.Context, request operations.DomainsLis
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -139,7 +141,7 @@ func (s *domains) DomainsList(ctx context.Context, request operations.DomainsLis
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DomainsListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -188,7 +190,7 @@ func (s *domains) DomainsPartialUpdate(ctx context.Context, request operations.D
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DomainsPartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -230,7 +232,7 @@ func (s *domains) DomainsRetrieve(ctx context.Context, request operations.Domain
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DomainsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -282,7 +284,7 @@ func (s *domains) DomainsUpdate(ctx context.Context, request operations.DomainsU
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DomainsUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -334,7 +336,7 @@ func (s *domains) DomainsVerifyCreate(ctx context.Context, request operations.Do
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DomainsVerifyCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

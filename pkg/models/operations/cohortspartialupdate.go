@@ -23,5 +23,5 @@ type CohortsPartialUpdateRequest struct {
 type CohortsPartialUpdateResponse struct {
 	Cohort      *shared.Cohort
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

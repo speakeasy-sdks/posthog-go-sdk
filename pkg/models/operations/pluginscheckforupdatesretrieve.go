@@ -16,5 +16,5 @@ type PluginsCheckForUpdatesRetrieveRequest struct {
 type PluginsCheckForUpdatesRetrieveResponse struct {
 	ContentType string
 	Plugin      *shared.Plugin
-	StatusCode  int64
+	StatusCode  int
 }

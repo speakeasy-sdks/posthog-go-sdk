@@ -22,5 +22,5 @@ type SessionRecordingPlaylistsCreateRequest struct {
 type SessionRecordingPlaylistsCreateResponse struct {
 	ContentType              string
 	SessionRecordingPlaylist *shared.SessionRecordingPlaylist
-	StatusCode               int64
+	StatusCode               int
 }

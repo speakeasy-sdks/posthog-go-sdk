@@ -15,5 +15,5 @@ type PluginsActivityRetrieveRequest struct {
 type PluginsActivityRetrieveResponse struct {
 	ContentType string
 	Plugin      *shared.Plugin
-	StatusCode  int64
+	StatusCode  int
 }

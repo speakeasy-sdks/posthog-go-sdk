@@ -16,5 +16,5 @@ type PropertyDefinitionsRetrieveRequest struct {
 type PropertyDefinitionsRetrieveResponse struct {
 	ContentType        string
 	PropertyDefinition *shared.PropertyDefinition
-	StatusCode         int64
+	StatusCode         int
 }

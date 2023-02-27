@@ -15,5 +15,5 @@ type QueryRetrieveRequest struct {
 
 type QueryRetrieveResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

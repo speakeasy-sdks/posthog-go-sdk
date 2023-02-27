@@ -23,5 +23,5 @@ type PluginConfigsJobCreateRequest struct {
 type PluginConfigsJobCreateResponse struct {
 	ContentType  string
 	PluginConfig *shared.PluginConfig
-	StatusCode   int64
+	StatusCode   int
 }

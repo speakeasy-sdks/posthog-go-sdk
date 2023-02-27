@@ -15,5 +15,5 @@ type GroupsPropertyDefinitionsRetrieveRequest struct {
 type GroupsPropertyDefinitionsRetrieveResponse struct {
 	ContentType string
 	Group       *shared.Group
-	StatusCode  int64
+	StatusCode  int
 }

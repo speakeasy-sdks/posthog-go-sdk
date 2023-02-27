@@ -21,5 +21,5 @@ type MembersListRequest struct {
 type MembersListResponse struct {
 	ContentType                     string
 	PaginatedOrganizationMemberList *shared.PaginatedOrganizationMemberList
-	StatusCode                      int64
+	StatusCode                      int
 }

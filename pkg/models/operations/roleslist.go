@@ -21,5 +21,5 @@ type RolesListRequest struct {
 type RolesListResponse struct {
 	ContentType       string
 	PaginatedRoleList *shared.PaginatedRoleList
-	StatusCode        int64
+	StatusCode        int
 }

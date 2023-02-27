@@ -15,5 +15,5 @@ type GroupsTypesListRequest struct {
 type GroupsTypesListResponse struct {
 	ContentType string
 	GroupTypes  []shared.GroupType
-	StatusCode  int64
+	StatusCode  int
 }

@@ -16,6 +16,6 @@ type CreateRequest struct {
 
 type CreateResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 	Team        *shared.Team
 }

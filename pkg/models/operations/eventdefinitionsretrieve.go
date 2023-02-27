@@ -16,5 +16,5 @@ type EventDefinitionsRetrieveRequest struct {
 type EventDefinitionsRetrieveResponse struct {
 	ContentType     string
 	EventDefinition *shared.EventDefinition
-	StatusCode      int64
+	StatusCode      int
 }

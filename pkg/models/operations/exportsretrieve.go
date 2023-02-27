@@ -16,5 +16,5 @@ type ExportsRetrieveRequest struct {
 type ExportsRetrieveResponse struct {
 	ContentType   string
 	ExportedAsset *shared.ExportedAsset
-	StatusCode    int64
+	StatusCode    int
 }

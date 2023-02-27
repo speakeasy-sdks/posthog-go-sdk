@@ -21,5 +21,5 @@ type GroupsFindRetrieveRequest struct {
 type GroupsFindRetrieveResponse struct {
 	ContentType string
 	Group       *shared.Group
-	StatusCode  int64
+	StatusCode  int
 }

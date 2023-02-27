@@ -23,5 +23,5 @@ type InsightsDestroyRequest struct {
 
 type InsightsDestroyResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

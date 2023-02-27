@@ -21,5 +21,5 @@ type DashboardsListRequest struct {
 type DashboardsListResponse struct {
 	ContentType            string
 	PaginatedDashboardList *shared.PaginatedDashboardList
-	StatusCode             int64
+	StatusCode             int
 }

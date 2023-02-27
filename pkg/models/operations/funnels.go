@@ -29,5 +29,5 @@ type FunnelsResponse struct {
 	Body               []byte
 	ContentType        string
 	FunnelStepsResults *shared.FunnelStepsResults
-	StatusCode         int64
+	StatusCode         int
 }

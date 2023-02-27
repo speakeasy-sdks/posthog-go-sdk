@@ -39,7 +39,9 @@ func (s *events) EventsRetrieve(ctx context.Context, request operations.EventsRe
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -55,7 +57,7 @@ func (s *events) EventsRetrieve(ctx context.Context, request operations.EventsRe
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.EventsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -90,7 +92,9 @@ func (s *events) EventsValuesRetrieve(ctx context.Context, request operations.Ev
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -106,7 +110,7 @@ func (s *events) EventsValuesRetrieve(ctx context.Context, request operations.Ev
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.EventsValuesRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

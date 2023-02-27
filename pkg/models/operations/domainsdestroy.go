@@ -11,5 +11,5 @@ type DomainsDestroyRequest struct {
 
 type DomainsDestroyResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

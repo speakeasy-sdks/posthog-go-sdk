@@ -22,5 +22,5 @@ type ExportsCreateRequest struct {
 type ExportsCreateResponse struct {
 	ContentType   string
 	ExportedAsset *shared.ExportedAsset
-	StatusCode    int64
+	StatusCode    int
 }

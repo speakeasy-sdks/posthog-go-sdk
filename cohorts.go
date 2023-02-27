@@ -60,7 +60,7 @@ func (s *cohorts) CohortsCreate(ctx context.Context, request operations.CohortsC
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.CohortsCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -103,7 +103,7 @@ func (s *cohorts) CohortsDestroy(ctx context.Context, request operations.Cohorts
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.CohortsDestroyResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -122,7 +122,9 @@ func (s *cohorts) CohortsList(ctx context.Context, request operations.CohortsLis
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -138,7 +140,7 @@ func (s *cohorts) CohortsList(ctx context.Context, request operations.CohortsLis
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.CohortsListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -187,7 +189,7 @@ func (s *cohorts) CohortsPartialUpdate(ctx context.Context, request operations.C
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.CohortsPartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -215,7 +217,9 @@ func (s *cohorts) CohortsPersonsRetrieve(ctx context.Context, request operations
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -231,7 +235,7 @@ func (s *cohorts) CohortsPersonsRetrieve(ctx context.Context, request operations
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.CohortsPersonsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -280,7 +284,7 @@ func (s *cohorts) CohortsRetrieve(ctx context.Context, request operations.Cohort
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.CohortsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -329,7 +333,7 @@ func (s *cohorts) CohortsUpdate(ctx context.Context, request operations.CohortsU
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.CohortsUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

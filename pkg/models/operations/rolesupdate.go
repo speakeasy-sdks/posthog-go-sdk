@@ -23,5 +23,5 @@ type RolesUpdateRequest struct {
 type RolesUpdateResponse struct {
 	ContentType string
 	Role        *shared.Role
-	StatusCode  int64
+	StatusCode  int
 }

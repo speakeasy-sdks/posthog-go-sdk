@@ -21,5 +21,5 @@ type DashboardTemplatesCreateRequest struct {
 
 type DashboardTemplatesCreateResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

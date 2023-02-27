@@ -3,6 +3,7 @@
 package main
 
 import (
+    "context"
     "log"
     "github.com/speakeasy-sdks/posthog-go-sdk"
     "github.com/speakeasy-sdks/posthog-go-sdk/pkg/models/shared"
@@ -21,7 +22,8 @@ func main() {
             Format: "undefined",
         },
     }
-    
+
+    ctx := context.Background()
     res, err := s.Actions.ActionsCountRetrieve(ctx, req)
     if err != nil {
         log.Fatal(err)
@@ -30,5 +32,6 @@ func main() {
     if res.Action != nil {
         // handle response
     }
+}
 ```
 <!-- End SDK Example Usage -->

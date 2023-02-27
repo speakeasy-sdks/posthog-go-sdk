@@ -62,7 +62,7 @@ func (s *invites) InvitesBulkCreate(ctx context.Context, request operations.Invi
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.InvitesBulkCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -114,7 +114,7 @@ func (s *invites) InvitesCreate(ctx context.Context, request operations.InvitesC
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.InvitesCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -156,7 +156,7 @@ func (s *invites) InvitesDestroy(ctx context.Context, request operations.Invites
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.InvitesDestroyResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -175,7 +175,9 @@ func (s *invites) InvitesList(ctx context.Context, request operations.InvitesLis
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -191,7 +193,7 @@ func (s *invites) InvitesList(ctx context.Context, request operations.InvitesLis
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.InvitesListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

@@ -11,5 +11,5 @@ type SubscriptionsDestroyRequest struct {
 
 type SubscriptionsDestroyResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

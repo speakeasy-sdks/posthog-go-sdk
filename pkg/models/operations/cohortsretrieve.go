@@ -16,5 +16,5 @@ type CohortsRetrieveRequest struct {
 type CohortsRetrieveResponse struct {
 	Cohort      *shared.Cohort
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

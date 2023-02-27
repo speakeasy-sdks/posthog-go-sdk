@@ -55,7 +55,7 @@ func (s *featureFlags) FeatureFlagsActivityRetrieve(ctx context.Context, request
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.FeatureFlagsActivityRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -100,7 +100,7 @@ func (s *featureFlags) FeatureFlagsActivityRetrieve2(ctx context.Context, reques
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.FeatureFlagsActivityRetrieve2Response{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -155,7 +155,7 @@ func (s *featureFlags) FeatureFlagsCreate(ctx context.Context, request operation
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.FeatureFlagsCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -198,7 +198,7 @@ func (s *featureFlags) FeatureFlagsDestroy(ctx context.Context, request operatio
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.FeatureFlagsDestroyResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -234,7 +234,7 @@ func (s *featureFlags) FeatureFlagsEvaluationReasonsRetrieve(ctx context.Context
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.FeatureFlagsEvaluationReasonsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -265,7 +265,9 @@ func (s *featureFlags) FeatureFlagsList(ctx context.Context, request operations.
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -281,7 +283,7 @@ func (s *featureFlags) FeatureFlagsList(ctx context.Context, request operations.
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.FeatureFlagsListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -326,7 +328,7 @@ func (s *featureFlags) FeatureFlagsLocalEvaluationRetrieve(ctx context.Context, 
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.FeatureFlagsLocalEvaluationRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -371,7 +373,7 @@ func (s *featureFlags) FeatureFlagsMyFlagsRetrieve(ctx context.Context, request 
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.FeatureFlagsMyFlagsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -423,7 +425,7 @@ func (s *featureFlags) FeatureFlagsPartialUpdate(ctx context.Context, request op
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.FeatureFlagsPartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -468,7 +470,7 @@ func (s *featureFlags) FeatureFlagsRetrieve(ctx context.Context, request operati
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.FeatureFlagsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -520,7 +522,7 @@ func (s *featureFlags) FeatureFlagsRoleAccessCreate(ctx context.Context, request
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.FeatureFlagsRoleAccessCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -562,7 +564,7 @@ func (s *featureFlags) FeatureFlagsRoleAccessDestroy(ctx context.Context, reques
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.FeatureFlagsRoleAccessDestroyResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -581,7 +583,9 @@ func (s *featureFlags) FeatureFlagsRoleAccessList(ctx context.Context, request o
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -597,7 +601,7 @@ func (s *featureFlags) FeatureFlagsRoleAccessList(ctx context.Context, request o
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.FeatureFlagsRoleAccessListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -639,7 +643,7 @@ func (s *featureFlags) FeatureFlagsRoleAccessRetrieve(ctx context.Context, reque
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.FeatureFlagsRoleAccessRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -694,7 +698,7 @@ func (s *featureFlags) FeatureFlagsUpdate(ctx context.Context, request operation
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.FeatureFlagsUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -749,7 +753,7 @@ func (s *featureFlags) FeatureFlagsUserBlastRadiusCreate(ctx context.Context, re
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.FeatureFlagsUserBlastRadiusCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

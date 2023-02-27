@@ -22,5 +22,5 @@ type InvitesBulkCreateRequest struct {
 type InvitesBulkCreateResponse struct {
 	ContentType        string
 	OrganizationInvite *shared.OrganizationInvite
-	StatusCode         int64
+	StatusCode         int
 }

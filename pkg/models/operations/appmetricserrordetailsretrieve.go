@@ -11,5 +11,5 @@ type AppMetricsErrorDetailsRetrieveRequest struct {
 
 type AppMetricsErrorDetailsRetrieveResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

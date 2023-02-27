@@ -15,5 +15,5 @@ type PerformanceEventsRecentPageviewsRetrieveRequest struct {
 type PerformanceEventsRecentPageviewsRetrieveResponse struct {
 	ContentType      string
 	PerformanceEvent *shared.PerformanceEvent
-	StatusCode       int64
+	StatusCode       int
 }

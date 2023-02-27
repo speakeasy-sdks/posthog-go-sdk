@@ -23,5 +23,5 @@ type FeatureFlagsRoleAccessCreateRequest struct {
 type FeatureFlagsRoleAccessCreateResponse struct {
 	ContentType           string
 	FeatureFlagRoleAccess *shared.FeatureFlagRoleAccessOutput
-	StatusCode            int64
+	StatusCode            int
 }

@@ -39,7 +39,9 @@ func (s *actions) ActionsCountRetrieve(ctx context.Context, request operations.A
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -55,7 +57,7 @@ func (s *actions) ActionsCountRetrieve(ctx context.Context, request operations.A
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ActionsCountRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -97,7 +99,9 @@ func (s *actions) ActionsCreate(ctx context.Context, request operations.ActionsC
 
 	req.Header.Set("Content-Type", reqContentType)
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -113,7 +117,7 @@ func (s *actions) ActionsCreate(ctx context.Context, request operations.ActionsC
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ActionsCreateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -149,7 +153,9 @@ func (s *actions) ActionsDestroy(ctx context.Context, request operations.Actions
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -165,7 +171,7 @@ func (s *actions) ActionsDestroy(ctx context.Context, request operations.Actions
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ActionsDestroyResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -184,7 +190,9 @@ func (s *actions) ActionsList(ctx context.Context, request operations.ActionsLis
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -200,7 +208,7 @@ func (s *actions) ActionsList(ctx context.Context, request operations.ActionsLis
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ActionsListResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -242,7 +250,9 @@ func (s *actions) ActionsPartialUpdate(ctx context.Context, request operations.A
 
 	req.Header.Set("Content-Type", reqContentType)
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -258,7 +268,7 @@ func (s *actions) ActionsPartialUpdate(ctx context.Context, request operations.A
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ActionsPartialUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -293,7 +303,9 @@ func (s *actions) ActionsPeopleRetrieve(ctx context.Context, request operations.
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -309,7 +321,7 @@ func (s *actions) ActionsPeopleRetrieve(ctx context.Context, request operations.
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ActionsPeopleRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -344,7 +356,9 @@ func (s *actions) ActionsRetrieve(ctx context.Context, request operations.Action
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -360,7 +374,7 @@ func (s *actions) ActionsRetrieve(ctx context.Context, request operations.Action
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ActionsRetrieveResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -402,7 +416,9 @@ func (s *actions) ActionsUpdate(ctx context.Context, request operations.ActionsU
 
 	req.Header.Set("Content-Type", reqContentType)
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.defaultClient
 
@@ -418,7 +434,7 @@ func (s *actions) ActionsUpdate(ctx context.Context, request operations.ActionsU
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ActionsUpdateResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

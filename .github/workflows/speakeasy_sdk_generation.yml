@@ -11,12 +11,11 @@ permissions:
         description: Force generation of SDKs
         type: boolean
         default: false
-  schedule:
-    - cron: 0 0 * * *
 jobs:
   generate:
     uses: speakeasy-api/sdk-generation-action/.github/workflows/sdk-generation.yaml@v14
     with:
+      create_release: true
       force: ${{ github.event.inputs.force }}
       languages: |
         - go
@@ -24,7 +23,6 @@ jobs:
       openapi_docs: |
         - ./schema.yaml
       speakeasy_version: latest
-      create_release: true
     secrets:
       github_access_token: ${{ secrets.GITHUB_TOKEN }}
       speakeasy_api_key: ${{ secrets.SPEAKEASY_API_KEY }}
